@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#031713" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Regula MT" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Regula MT TC</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icones/apple-touch-icon.png" />
+  <link rel="icon" href="icones/icone-192.png" />
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+  <!-- LOGIN -->
+  <main id="tela-login" class="tela login" hidden>
+    <div class="login-topo">
+      <div class="logo grande" aria-hidden="true"><span></span></div>
+      <h1>REGULA MT <b>TC</b></h1>
+      <p class="sub">Fila de tomografias do RegulaMT · SMS Cuiabá</p>
+    </div>
+    <form id="form-login" class="login-form">
+      <label>Usuário<input id="in-usuario" autocomplete="username" autocapitalize="none" autocorrect="off" placeholder="ex.: luiz" required /></label>
+      <label>Senha<input id="in-senha" type="password" autocomplete="current-password" required /></label>
+      <button type="submit" class="botao grande">Entrar</button>
+      <p id="erro-login" class="erro"></p>
+      <p class="nota">Mesmo usuário e senha do Regula TC.</p>
+    </form>
+  </main>
+
+  <!-- PRINCIPAL -->
+  <main id="tela-fila" class="tela" hidden>
+    <header class="topo">
+      <div class="topo-linha">
+        <div>
+          <p class="sobre">Regulação de TC</p>
+          <h1>Fila <span id="qtd" class="qtd">0</span></h1>
+        </div>
+        <button id="btn-menu" class="redondo" type="button" aria-label="Menu">•••</button>
+      </div>
+      <button id="status" class="status" type="button">
+        <span class="ponto"></span><span id="status-texto">Carregando…</span>
+      </button>
+      <div id="chips" class="chips" role="tablist"></div>
+    </header>
+
+    <div id="aviso-instalar" class="aviso" hidden>
+      <b>Instale para receber alertas:</b> toque em <span class="ic">⬆︎</span> Compartilhar → <b>Adicionar à Tela de Início</b>, depois abra pelo ícone.
+    </div>
+    <button id="aviso-alertas" class="aviso clicavel" type="button" hidden>
+      🔔 <b>Ativar alertas de nova TC</b> neste iPhone
+    </button>
+
+    <section id="fila" class="fila" aria-live="polite"></section>
+    <p id="atualizado" class="atualizado"></p>
+  </main>
+
+  <!-- DETALHE -->
+  <div id="fundo" class="fundo" hidden></div>
+  <section id="folha" class="folha" role="dialog" aria-modal="true" aria-labelledby="det-nome" hidden>
+    <div class="alca"></div>
+    <div id="det-prio" class="det-prio"></div>
+    <h2 id="det-nome"></h2>
+    <p id="det-unid" class="det-unid"></p>
+    <dl class="det">
+      <div><dt>Exame</dt><dd id="det-proc"></dd></div>
+      <div><dt>Esperando</dt><dd id="det-espera"></dd></div>
+      <div><dt>Solicitado em</dt><dd id="det-data"></dd></div>
+      <div><dt>Situação</dt><dd id="det-sit"></dd></div>
+      <div><dt>Solicitação</dt><dd id="det-id"></dd></div>
+    </dl>
+    <a id="det-regular" class="botao grande" target="_blank" rel="noopener">Regular no RegulaMT ↗</a>
+    <p class="nota centro">Abre o quadro clínico no Safari. Na primeira vez, entre com o gov.br e escolha o vínculo de regulador.</p>
+    <button id="det-fechar" class="botao secundario" type="button">Fechar</button>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="folha" role="dialog" aria-modal="true" hidden>
+    <div class="alca"></div>
+    <h2>Ajustes</h2>
+    <label class="linha-op"><span>Mostrar nomes completos</span><input type="checkbox" id="chk-nomes" checked /></label>
+    <button id="btn-alertas" class="botao" type="button">Ativar alertas neste iPhone</button>
+    <button id="btn-teste" class="botao secundario" type="button" hidden>Enviar alerta de teste</button>
+    <a class="botao secundario" href="https://regulamt.saude.mt.gov.br/inicio?status=pendentes" target="_blank" rel="noopener">Abrir RegulaMT</a>
+    <button id="btn-sair" class="botao perigo" type="button">Sair</button>
+    <p class="nota centro" id="menu-info"></p>
+    <button id="menu-fechar" class="botao secundario" type="button">Fechar</button>
+  </section>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
