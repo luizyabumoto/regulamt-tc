@@ -1,5 +1,5 @@
 {
-  "versao": "1.3.1",
+  "versao": "1.3.2",
   "arquivos": [
     {
       "caminho": "icones/icone-256.png",
@@ -11,7 +11,7 @@
     },
     {
       "caminho": "interface/app.js",
-      "sha256": "14d8bdcc69daff035229d29d9ff1b283c99c73fe849ec0bbd1a705447955123b"
+      "sha256": "ea3ef1cd04cff582a0140d95751064b9b3414cf06d19e50b24c1a305598673c0"
     },
     {
       "caminho": "interface/estilo.css",
@@ -19,7 +19,7 @@
     },
     {
       "caminho": "interface/index.html",
-      "sha256": "b23bedda423a7eaf7e9c21a479edf847ca4e7a85b1eacf7aa7adf71091918765"
+      "sha256": "b5c3027e9084a9035ff0cdc11818627e1fd034dd02154f0435b2766471b6de3b"
     },
     {
       "caminho": "ponte.js",
@@ -27,7 +27,7 @@
     },
     {
       "caminho": "principal.js",
-      "sha256": "70530cff242fe4b707354cbd5e33df80a98140562cc92e32bf8a40c93fe951d3"
+      "sha256": "f8ab6b1155fdc807fd764d9182a57adacf5dfd85fba5b25beb980505612b1262"
     }
   ]
 }
