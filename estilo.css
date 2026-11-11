@@ -41,17 +41,32 @@ button, input { font: inherit; color: inherit; }
 .logo.grande { width: 84px; height: 84px; border-width: 9px; }
 .logo.grande span { width: 24px; height: 24px; }
 
-/* LOGIN */
-.login { min-height: 100dvh; display: flex; flex-direction: column; justify-content: center; padding: calc(var(--topo) + 24px) 24px calc(var(--base) + 24px); background: radial-gradient(600px 400px at 90% -10%, rgba(16,185,129,.18), transparent 60%), radial-gradient(500px 360px at 0% 110%, rgba(245,197,24,.10), transparent 60%), var(--fundo); }
-.login-topo { text-align: center; margin-bottom: 32px; }
-.login-topo .logo { margin: 0 auto 16px; }
-.login h1 { margin: 0; font-size: 32px; font-weight: 900; letter-spacing: -.02em; }
+/* LOGIN — cartão centralizado, largura limitada (fica bem no iPhone e no computador) */
+.login { min-height: 100dvh; display: grid; place-items: center; padding: calc(var(--topo) + 20px) 20px calc(var(--base) + 20px); background: radial-gradient(520px 380px at 85% 0%, rgba(16,185,129,.20), transparent 60%), radial-gradient(460px 340px at 0% 100%, rgba(245,197,24,.12), transparent 60%), var(--fundo); }
+.login-cartao { width: 100%; max-width: 380px; padding: 26px 22px 20px; border-radius: 24px; background: color-mix(in srgb, var(--cartao) 88%, transparent); border: 1px solid var(--borda); box-shadow: 0 20px 60px rgba(0,0,0,.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.login-topo { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.login-topo .logo { width: 52px; height: 52px; border-width: 6px; flex: none; }
+.login-topo .logo span { width: 14px; height: 14px; }
+.login h1 { margin: 0; font-size: 24px; font-weight: 900; letter-spacing: -.02em; line-height: 1.1; }
 .login h1 b { color: var(--ouro); }
-.sub { margin: 6px 0 0; color: var(--suave); font-size: 15px; }
-.login-form { display: flex; flex-direction: column; gap: 14px; }
-.login-form label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--suave); font-weight: 600; }
-.login-form input { min-height: 52px; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--borda); background: var(--cartao); font-size: 17px; outline: none; }
-.login-form input:focus { border-color: var(--ouro); }
+.sub { margin: 4px 0 0; color: var(--suave); font-size: 13.5px; }
+.login-form { display: flex; flex-direction: column; gap: 6px; }
+.login-form label { font-size: 13px; color: var(--suave); font-weight: 700; margin-top: 6px; }
+.campo { display: flex; align-items: center; gap: 10px; height: 48px; padding: 0 12px; border-radius: 14px; border: 1px solid var(--borda); background: var(--fundo); transition: border-color .15s, box-shadow .15s; }
+.campo:focus-within { border-color: var(--ouro); box-shadow: 0 0 0 4px rgba(245,197,24,.12); }
+.campo svg { width: 20px; height: 20px; flex: none; fill: none; stroke: var(--suave); stroke-width: 1.8; stroke-linecap: round; }
+.campo input { flex: 1; min-width: 0; height: 100%; border: 0; outline: none; background: transparent; font-size: 17px; }
+.campo .ver { border: 0; background: transparent; color: var(--ouro); font-weight: 700; font-size: 14px; padding: 6px; }
+.login-form .botao { margin-top: 16px; }
+.login-rodape { margin: 14px 0 0; text-align: center; font-size: 12.5px; color: var(--suave); }
+
+/* Telas grandes (computador/iPad): conteúdo centralizado com largura de celular grande */
+@media (min-width: 640px) {
+  #tela-fila { max-width: 640px; margin: 0 auto; border-left: 1px solid var(--borda); border-right: 1px solid var(--borda); min-height: 100dvh; }
+  .folha { left: 50%; right: auto; width: 640px; transform: translateX(-50%); }
+  @keyframes sobe { from { transform: translate(-50%, 60px); } to { transform: translate(-50%, 0); } }
+  .toast { left: 50%; right: auto; width: 420px; transform: translateX(-50%); }
+}
 
 /* TOPO */
 .topo { position: sticky; top: 0; z-index: 5; padding: calc(var(--topo) + 8px) 16px 10px; background: color-mix(in srgb, var(--fundo) 86%, transparent); backdrop-filter: saturate(1.6) blur(18px); -webkit-backdrop-filter: saturate(1.6) blur(18px); border-bottom: 1px solid var(--borda); }
