@@ -56,6 +56,8 @@
     </button>
 
     <section id="fila" class="fila" aria-live="polite"></section>
+    <h2 id="tit-classif" class="sec" hidden>Classificadas — aguardando encaminhamento</h2>
+    <section id="classificadas" class="fila"></section>
     <p id="atualizado" class="atualizado"></p>
   </main>
 
@@ -73,8 +75,9 @@
       <div><dt>Situação</dt><dd id="det-sit"></dd></div>
       <div><dt>Solicitação</dt><dd id="det-id"></dd></div>
     </dl>
-    <a id="det-regular" class="botao grande" target="_blank" rel="noopener">Regular no RegulaMT ↗</a>
-    <p class="nota centro">Abre o quadro clínico no Safari. Na primeira vez, entre com o gov.br e escolha o vínculo de regulador.</p>
+    <div id="det-acoes"></div>
+    <div id="det-clinico"></div>
+    <a id="det-regular" class="botao secundario" target="_blank" rel="noopener">Abrir no RegulaMT (Safari) ↗</a>
     <button id="det-fechar" class="botao secundario" type="button">Fechar</button>
   </section>
 

@@ -123,3 +123,24 @@ button, input { font: inherit; color: inherit; }
 .erro { margin: 0; color: var(--vermelho); font-size: 15px; min-height: 1.2em; text-align: center; }
 
 .toast { position: fixed; left: 16px; right: 16px; bottom: calc(var(--base) + 16px); z-index: 20; padding: 14px 16px; border-radius: 14px; background: var(--ouro); color: #062a22; font-weight: 700; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+
+.sec { margin: 8px 16px 0; font-size: 17px; }
+.pedido.classificada .faixa { background: var(--verde); }
+.bloco { background: var(--cartao2); border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+.bloco h3 { margin: 0; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--suave); }
+.bloco p { margin: 0; white-space: pre-wrap; font-size: 15px; }
+.prios { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.prio { position: relative; min-height: 54px; border: 3px solid transparent; border-radius: 14px; font-weight: 800; font-size: 16px; color: #062a22; }
+.prio[data-n="1"] { background: var(--vermelho); } .prio[data-n="2"] { background: var(--laranja); } .prio[data-n="3"] { background: var(--amarelo); } .prio[data-n="4"] { background: var(--azul); }
+.prio.escolhida { border-color: var(--texto); box-shadow: 0 0 0 3px var(--ouro); }
+.prio .sug { position: absolute; top: -9px; right: 8px; font-size: 11px; background: var(--ouro); color: #062a22; border-radius: 99px; padding: 1px 7px; }
+.troca { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px; font-size: 15px; }
+.troca input { width: 24px; height: 24px; accent-color: var(--ouro); }
+.bloco textarea, .bloco input[type="text"] { width: 100%; min-height: 48px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--borda); background: var(--cartao); color: var(--texto); font: inherit; }
+.bloco textarea { min-height: 90px; }
+.resultado { padding: 12px 14px; border-radius: 14px; font-weight: 700; font-size: 15px; }
+.resultado.ok { background: rgba(52,211,153,.18); border: 1px solid var(--verde); }
+.resultado.erro { background: rgba(255,107,107,.14); border: 1px solid var(--vermelho); }
+.resultado.espera { background: var(--cartao2); color: var(--suave); }
+.dois { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+details summary { color: var(--ouro); font-weight: 700; cursor: pointer; padding: 6px 0; }
