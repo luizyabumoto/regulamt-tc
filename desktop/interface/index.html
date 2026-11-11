@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <title>Regula MT TC</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- LATERAL -->
+    <aside class="lateral">
+      <div class="marca">
+        <div class="logo" aria-hidden="true"><span></span></div>
+        <div>
+          <p class="nome">REGULA MT <b>TC</b></p>
+          <p class="sub">SMS Cuiabá · Regulador</p>
+        </div>
+      </div>
+
+      <button id="btn-plantao" class="plantao" type="button">Iniciar plantão</button>
+
+      <section id="status" class="status" role="status" aria-live="polite">
+        <span class="ponto"></span>
+        <div>
+          <p id="status-titulo" class="status-titulo">Carregando…</p>
+          <p id="status-texto" class="status-texto"></p>
+        </div>
+      </section>
+
+      <div class="acoes">
+        <button id="btn-regulamt" type="button">Entrar no RegulaMT</button>
+        <button id="btn-atualizar" type="button" class="secundario">↻ Atualizar</button>
+      </div>
+      <button id="btn-finalizar" type="button" class="secundario finalizar">⏻ Finalizar sessão</button>
+
+      <h3 class="titulo-sec">Unidades</h3>
+      <div id="unidades" class="unidades"></div>
+
+      <nav class="abas-lat">
+        <button type="button" data-aba="fila" class="ativa">Fila</button>
+        <button type="button" data-aba="iphone">iPhone</button>
+        <button type="button" data-aba="ajustes">Ajustes</button>
+      </nav>
+      <p class="rodape" id="rodape"></p>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="conteudo">
+      <!-- FILA -->
+      <section id="aba-fila" class="aba">
+        <header class="cab">
+          <div>
+            <p class="sobre">Regulação de tomografias</p>
+            <h1>Fila unificada <span id="qtd" class="qtd">0</span></h1>
+          </div>
+          <div class="cab-dir">
+            <label class="alternar"><input type="checkbox" id="chk-nomes" /> Mostrar nomes</label>
+            <div class="filtro-prio" id="filtro-prio"></div>
+          </div>
+        </header>
+        <div id="resumo" class="resumo"></div>
+        <div id="fila" class="fila"></div>
+        <h2 class="sec-classif" id="tit-classif" hidden>Classificadas — aguardando encaminhamento <span id="qtd-classif" class="qtd peq">0</span></h2>
+        <div id="classificadas" class="fila"></div>
+      </section>
+
+      <!-- IPHONE -->
+      <section id="aba-iphone" class="aba" hidden>
+        <header class="cab"><div><p class="sobre">Conectar</p><h1>iPhone</h1></div></header>
+        <div class="cartao">
+          <h2>1. Ligar o envio para o iPhone</h2>
+          <p class="nota">Entre com o mesmo usuário e senha do Regula TC. Só esse usuário vê a fila no iPhone.</p>
+          <div id="nuvem-off">
+            <form id="form-nuvem" class="form">
+              <input id="in-usuario" autocomplete="username" placeholder="usuário (ex.: luiz)" required />
+              <input id="in-senha" type="password" autocomplete="current-password" placeholder="senha" required />
+              <button type="submit">Conectar</button>
+            </form>
+            <p id="erro-nuvem" class="erro"></p>
+          </div>
+          <div id="nuvem-on" hidden>
+            <p>Conectado como <b id="nuvem-usuario"></b>. A fila é enviada a cada consulta e apagada ao encerrar o plantão.</p>
+            <p id="nuvem-erro" class="erro"></p>
+            <button id="btn-sair-nuvem" type="button" class="secundario">Desconectar iPhone</button>
+          </div>
+        </div>
+        <div class="cartao">
+          <h2>2. Instalar no iPhone</h2>
+          <ol class="passos">
+            <li>No iPhone, abra o <b>Safari</b> no endereço: <a href="#" id="link-iphone"></a>
+              <form id="form-endereco" class="form" style="margin-top:8px"><input id="in-endereco" placeholder="https://..." /><button type="submit" class="secundario">Salvar endereço</button></form></li>
+            <li>Toque em <b>Compartilhar</b> (quadrado com seta) → <b>Adicionar à Tela de Início</b>.</li>
+            <li>Abra o ícone <b>Regula MT</b> na tela de início, entre com o mesmo usuário e toque em <b>Ativar alertas</b>.</li>
+          </ol>
+          <p class="nota">Os alertas do iPhone só funcionam com o app aberto pela tela de início (exigência da Apple) e com este notebook ligado e o plantão ativo.</p>
+        </div>
+      </section>
+
+      <!-- AJUSTES -->
+      <section id="aba-ajustes" class="aba" hidden>
+        <header class="cab"><div><p class="sobre">Preferências</p><h1>Ajustes</h1></div></header>
+        <div class="cartao">
+          <label>Consultar a cada <input id="in-intervalo" type="number" min="30" max="900" step="10" /> segundos</label>
+          <label>Repetir o alerta a cada <input id="in-lembrete" type="number" min="0" max="120" step="5" /> minutos enquanto houver TC esperando (0 desliga)</label>
+          <label class="alternar"><input type="checkbox" id="chk-auto" /> Iniciar o plantão sozinho ao entrar no RegulaMT</label>
+          <label class="alternar"><input type="checkbox" id="chk-som" /> Som de alerta no notebook</label>
+          <label class="alternar"><input type="checkbox" id="chk-windows" /> Abrir junto com o Windows</label>
+          <fieldset>
+            <legend>Avisar espera longa (minutos, pela prioridade sugerida · 0 desliga)</legend>
+            <div class="grade-espera" id="espera"></div>
+          </fieldset>
+          <div class="linha">
+            <button id="btn-som" type="button" class="secundario">Testar som</button>
+            <button id="btn-salvar" type="button">Salvar</button>
+          </div>
+          <p id="salvo" class="nota"></p>
+        </div>
+        <div class="cartao nota">
+          <p><b>Somente leitura.</b> O programa só consulta o RegulaMT. Classificar, negar, pedir correção e encaminhar
+          são feitos na janela do RegulaMT (clique no pedido). A senha do gov.br nunca passa pelo programa.</p>
+          <p>Fechar a janela durante o plantão deixa o monitor rodando na bandeja (perto do relógio). Para sair de vez:
+          botão direito no ícone da bandeja → Sair do programa.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <!-- PAINEL DO PEDIDO -->
+  <div id="fundo" class="fundo" hidden></div>
+  <aside id="gaveta" class="gaveta" hidden aria-modal="true" role="dialog">
+    <header class="g-topo">
+      <div>
+        <p class="sobre" id="g-unid"></p>
+        <h2 id="g-nome"></h2>
+        <p class="g-sub" id="g-sub"></p>
+      </div>
+      <button id="g-fechar" class="secundario" type="button" aria-label="Fechar">✕</button>
+    </header>
+    <div id="g-corpo" class="g-corpo"></div>
+  </aside>
+  <script src="app.js"></script>
+</body>
+</html>
