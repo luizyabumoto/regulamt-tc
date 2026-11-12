@@ -102,7 +102,8 @@
         <header class="cab"><div><p class="sobre">Preferências</p><h1>Ajustes</h1></div></header>
         <div class="cartao">
           <label>Consultar a cada <input id="in-intervalo" type="number" min="30" max="900" step="10" /> segundos</label>
-          <label>Repetir o alerta a cada <input id="in-lembrete" type="number" min="0" max="120" step="5" /> minutos enquanto houver TC esperando (0 desliga)</label>
+          <p class="nota">Alertas: na hora em que a TC chega; depois a cada 5 min enquanto ninguém abrir o pedido; passou de 20 min sem abrir, a cada 2 min.</p>
+          <label>Depois que você abre o pedido, lembrar a cada <input id="in-lembrete" type="number" min="5" max="120" step="5" /> minutos até regular</label>
           <label class="alternar"><input type="checkbox" id="chk-auto" /> Iniciar o plantão sozinho ao entrar no RegulaMT</label>
           <label class="alternar"><input type="checkbox" id="chk-som" /> Som de alerta no notebook</label>
           <label class="alternar"><input type="checkbox" id="chk-windows" /> Abrir junto com o Windows</label>

@@ -150,3 +150,16 @@ select, .bloco input[type="text"] { width: 100%; padding: 8px 10px; border-radiu
 .resultado.incerto { background: rgba(251,146,60,.12); border: 1px solid var(--laranja); }
 .carregando { color: var(--suave); padding: 30px; text-align: center; }
 .perigo { background: transparent !important; color: var(--vermelho) !important; border: 1px solid rgba(248,113,113,.5) !important; }
+
+/* Decisão: Aprovar x Negar */
+.decisoes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 6px 0 12px; }
+.decisao { padding: 14px; border-radius: 12px; font-size: 17px; font-weight: 850; border: 3px solid; background: transparent; cursor: pointer; }
+.decisao.aprovar { color: #2fd18b; border-color: #2fd18b; }
+.decisao.negar { color: #ff6b6b; border-color: #ff6b6b; }
+.decisao.aprovar.ativa { background: #16a36a; border-color: #16a36a; color: #fff; }
+.decisao.negar.ativa { background: #dc3b3b; border-color: #dc3b3b; color: #fff; }
+.painel-decisao { display: grid; gap: 10px; padding: 12px; border-radius: 12px; border: 2px solid; }
+.painel-decisao[hidden] { display: none; }
+.painel-decisao.aprovar { border-color: rgba(47,209,139,.45); }
+.painel-decisao.negar { border-color: rgba(255,107,107,.45); }
+.painel-decisao h3 { margin: 0; }
