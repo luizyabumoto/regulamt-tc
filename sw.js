@@ -1,5 +1,5 @@
 // Service worker do app do iPhone: alertas (push) e tela disponível mesmo sem rede.
-const CACHE = "regulamt-tc-v4";
+const CACHE = "regulamt-tc-v5";
 const ARQUIVOS = ["./", "index.html", "estilo.css", "app.js", "manifest.webmanifest", "icones/apple-touch-icon.png", "icones/icone-192.png"];
 
 self.addEventListener("install", (e) => {
@@ -36,10 +36,12 @@ self.addEventListener("push", (e) => {
     self.registration.showNotification(d.titulo, {
       body: d.corpo,
       tag: d.etiqueta,
+      renotify: true, // toca de novo mesmo substituindo um aviso anterior
       icon: "icones/icone-192.png",
       badge: "icones/icone-192.png",
       data: { destino: d.destino },
       requireInteraction: true,
+      vibrate: [400, 150, 400, 150, 400],
     })
   );
 });
