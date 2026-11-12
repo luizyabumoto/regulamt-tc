@@ -291,3 +291,16 @@ a { color: inherit; }
 .hist-just { font-style: italic; }
 .nota-hist { font-size: 12.5px; color: var(--suave); margin-top: 14px; }
 .vazio { color: var(--suave); text-align: center; padding: 24px 0; }
+
+/* Passo a passo da regulação */
+.passo { display: grid; gap: 10px; padding: 12px 0; border-top: 1px dashed var(--linha); }
+.passo:first-child { border-top: 0; padding-top: 0; }
+.passo[hidden] { display: none; }
+.passo-tit { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; color: var(--suave); }
+.passo-tit .num { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 99px; background: var(--ouro); color: var(--ouro-txt); font-size: 13px; letter-spacing: 0; }
+.passo .decisoes { margin: 0; }
+.resumo-envio { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 750; }
+.prio-resumo { padding: 6px 14px; border-radius: 99px; color: #fff; font-weight: 900; }
+.prio-resumo.p1 { background: #dc3b3b; } .prio-resumo.p2 { background: #e07a12; } .prio-resumo.p3 { background: #c9a100; } .prio-resumo.p4 { background: #2f7fe0; }
+.botao.enviar { min-height: 60px; font-size: 18px; font-weight: 900; background: var(--texto); color: var(--fundo); border: 0; border-radius: 16px; }
+.dica-decisao { display: none; }
