@@ -305,9 +305,8 @@ a { color: inherit; }
 .botao.enviar { min-height: 60px; font-size: 18px; font-weight: 900; background: var(--texto); color: var(--fundo); border: 0; border-radius: 16px; }
 .dica-decisao { display: none; }
 
-/* Vidro fosco numa camada só de fundo: no iPhone o desfoque aplicado direto no cabeçalho
-   borrava também a logo e o texto. */
-.topo::before, .barra::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--vidro); -webkit-backdrop-filter: saturate(1.6) blur(20px); backdrop-filter: saturate(1.6) blur(20px); }
+/* Sem desfoque nenhum: no iPhone ele borrava a logo e o texto do topo. Fundo sólido. */
+.topo, .barra { background: var(--fundo); }
 .topo .marca-mini { font-size: 18px; -webkit-font-smoothing: antialiased; }
 .topo .logo.peq { width: 28px; height: 28px; border-width: 4px; background: transparent; }
 .topo .logo.peq span { width: 8px; height: 8px; }
