@@ -83,6 +83,18 @@
       <div id="classificadas" class="lista"></div>
     </section>
 
+    <!-- ABA HISTÓRICO -->
+    <section id="aba-hist" class="aba" hidden>
+      <div class="titulo-grande">
+        <h1>Histórico</h1>
+        <p class="subtitulo">Regulações feitas pelo app, por plantão</p>
+      </div>
+      <div class="plantoes" id="plantoes"></div>
+      <div id="hist-kpis" class="kpis kpis4"></div>
+      <div id="hist-lista" class="lista"></div>
+      <p class="nota-hist">Diurno 7h–19h · Noturno 19h–7h. No iPhone ficam o plantão atual e o anterior; o notebook guarda 7 dias (aba Histórico dele).</p>
+    </section>
+
     <!-- ABA AJUSTES -->
     <section id="aba-ajustes" class="aba" hidden>
       <div class="titulo-grande"><h1>Ajustes</h1><p class="subtitulo" id="conta"></p></div>
@@ -128,6 +140,7 @@
     <nav class="barra" aria-label="Navegação">
       <button type="button" data-aba="fila" class="ativa"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Fila</span><i id="b-fila" class="badge" hidden></i></button>
       <button type="button" data-aba="classif"><svg viewBox="0 0 24 24"><path d="M5 12h12M13 6l6 6-6 6"/></svg><span>Encaminhar</span><i id="b-classif" class="badge" hidden></i></button>
+      <button type="button" data-aba="hist"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Histórico</span></button>
       <button type="button" data-aba="ajustes"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M2.5 12h3M18.5 12h3M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg><span>Ajustes</span></button>
     </nav>
   </div>

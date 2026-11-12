@@ -1,5 +1,5 @@
 {
-  "versao": "1.5.0",
+  "versao": "1.6.0",
   "arquivos": [
     {
       "caminho": "icones/icone-256.png",
@@ -11,23 +11,23 @@
     },
     {
       "caminho": "interface/app.js",
-      "sha256": "0259e97757c0f6e6326492d1c5678e9b082c62e600f671359a3b3b0e2a52c96b"
+      "sha256": "ce6ad54d975f7919e735a5764447c1993f0b05ddbe5a406c1d195fe2055adc63"
     },
     {
       "caminho": "interface/estilo.css",
-      "sha256": "43cb6ed1768d87f5e2d9214882208067cb6e848b64cd35a55bd9a000920f3099"
+      "sha256": "50e5a18f05bcc063c25445eda6792b87ab23cbe73d4fc2761dd7a83157e9da38"
     },
     {
       "caminho": "interface/index.html",
-      "sha256": "311cf3e8d8a61c785ebab36f3d623ae2ba9c1098e0ac1801a525cfaa4fee3e8c"
+      "sha256": "48844c8a8f2da8a29cee1fdabafd14158885565a2013f99aa22e95aa1394f3a4"
     },
     {
       "caminho": "ponte.js",
-      "sha256": "f72732197e253ea95824181e640cd888381b7608e303c8b9a9e384179605dcde"
+      "sha256": "8f61f1627e4dfb50eedeb165a734f86025a7fc01610d01a3b69d5cf460ef5b16"
     },
     {
       "caminho": "principal.js",
-      "sha256": "6f77a15e8c2e00b867b12ffa2435d483dd1de670577c12cd842be5bbe394b17b"
+      "sha256": "7178e1f73029998d8095a95c6efcc4bc66a20e9b0ff477e8c00083ae07a56bc2"
     }
   ]
 }

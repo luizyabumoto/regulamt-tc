@@ -205,7 +205,7 @@ a { color: inherit; }
 .centro { text-align: center; margin: 14px 0; }
 
 /* barra inferior */
-.barra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; display: grid; grid-template-columns: repeat(3, 1fr); padding: 6px 10px calc(var(--base) + 4px); background: var(--vidro); backdrop-filter: saturate(1.6) blur(20px); -webkit-backdrop-filter: saturate(1.6) blur(20px); border-top: 1px solid var(--linha); }
+.barra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; display: grid; grid-template-columns: repeat(4, 1fr); padding: 6px 10px calc(var(--base) + 4px); background: var(--vidro); backdrop-filter: saturate(1.6) blur(20px); -webkit-backdrop-filter: saturate(1.6) blur(20px); border-top: 1px solid var(--linha); }
 @media (min-width: 640px) { .barra { max-width: 600px; margin: 0 auto; } }
 .barra button { position: relative; display: flex; flex-direction: column; align-items: center; gap: 3px; min-height: 52px; border: 0; background: transparent; color: var(--suave); font-size: 11.5px; font-weight: 650; }
 .barra svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -270,3 +270,24 @@ a { color: inherit; }
 .painel-decisao.aprovar { border-color: rgba(22,163,106,.45); }
 .painel-decisao.negar { border-color: rgba(220,59,59,.45); }
 .painel-decisao h3 { margin: 0; }
+.dica-decisao { margin: 0 0 8px; font-size: 13px; color: var(--suave); text-align: center; }
+.bloco:has(.decisao.ativa) .dica-decisao { display: none; }
+
+/* Histórico */
+.plantoes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.plantao { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 10px 12px; border-radius: 14px; border: 2px solid var(--linha); background: var(--cartao); color: var(--texto); text-align: left; }
+.plantao small { font-size: 11.5px; color: var(--suave); }
+.plantao.ativo { border-color: var(--ouro); }
+.kpis4 { grid-template-columns: repeat(4, 1fr); }
+.kpis4 .kpi { padding: 10px 8px; } .kpis4 .kpi b { font-size: 20px; } .kpis4 .kpi span { font-size: 11px; }
+.hist-item { display: grid; grid-template-columns: 52px 1fr; gap: 10px; padding: 12px; border: 1px solid var(--linha); border-radius: var(--raio); background: var(--cartao); color: var(--texto); text-decoration: none; }
+.hist-item time { font-weight: 850; font-size: 17px; }
+.hist-meio { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.hist-meio small { color: var(--suave); }
+.hist-tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 3px; }
+.hist-acao { font-weight: 800; font-size: 11.5px; padding: 3px 9px; border-radius: 99px; }
+.h-class { background: rgba(47,127,224,.18); color: #3d8bf0; } .h-enc { background: rgba(22,163,106,.18); color: #16a36a; }
+.h-neg { background: rgba(220,59,59,.18); color: #dc3b3b; } .h-dev { background: rgba(224,122,18,.18); color: #e07a12; }
+.hist-just { font-style: italic; }
+.nota-hist { font-size: 12.5px; color: var(--suave); margin-top: 14px; }
+.vazio { color: var(--suave); text-align: center; padding: 24px 0; }

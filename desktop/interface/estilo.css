@@ -163,3 +163,17 @@ select, .bloco input[type="text"] { width: 100%; padding: 8px 10px; border-radiu
 .painel-decisao.aprovar { border-color: rgba(47,209,139,.45); }
 .painel-decisao.negar { border-color: rgba(255,107,107,.45); }
 .painel-decisao h3 { margin: 0; }
+
+/* Histórico */
+.sel-plantao { padding: 9px 12px; border-radius: 10px; font-weight: 700; }
+.hist-lista { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+.hist-item { display: grid; grid-template-columns: 56px 1fr auto auto auto; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 12px; background: var(--cartao, rgba(255,255,255,.04)); cursor: pointer; }
+.hist-item:hover { outline: 1px solid var(--ouro); }
+.hist-item time { font-weight: 800; font-size: 17px; }
+.hist-meio { display: flex; flex-direction: column; min-width: 0; }
+.hist-meio small { opacity: .75; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hist-acao { font-weight: 800; font-size: 12px; padding: 4px 10px; border-radius: 99px; }
+.h-class { background: rgba(47,127,224,.2); color: #7fb4ff; } .h-enc { background: rgba(22,163,106,.22); color: #4fe0a0; }
+.h-neg { background: rgba(220,59,59,.22); color: #ff8a8a; } .h-dev { background: rgba(224,122,18,.22); color: #ffb062; }
+.hist-origem { font-size: 12px; opacity: .7; }
+.vazio { opacity: .7; padding: 20px 0; }
