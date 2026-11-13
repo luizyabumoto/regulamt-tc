@@ -1,5 +1,5 @@
 {
-  "versao": "1.6.1",
+  "versao": "1.6.2",
   "arquivos": [
     {
       "caminho": "icones/icone-256.png",
@@ -27,7 +27,7 @@
     },
     {
       "caminho": "principal.js",
-      "sha256": "dbf84f41d4d0d39b30a1ca756364f4be696b2133c7bebb42859fb5bb3552ac57"
+      "sha256": "284dd850192ac7fcbe3bfbfb5ddc38b323e174d9b812f40f2a5c43b6752bf083"
     }
   ]
 }
