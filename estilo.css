@@ -310,3 +310,4 @@ a { color: inherit; }
 .topo .marca-mini { font-size: 18px; -webkit-font-smoothing: antialiased; }
 .topo .logo.peq { width: 28px; height: 28px; border-width: 4px; background: transparent; }
 .topo .logo.peq span { width: 8px; height: 8px; }
+.kpis4 .kpi.largo { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 10px; }

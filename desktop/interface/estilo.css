@@ -177,3 +177,4 @@ select, .bloco input[type="text"] { width: 100%; padding: 8px 10px; border-radiu
 .h-neg { background: rgba(220,59,59,.22); color: #ff8a8a; } .h-dev { background: rgba(224,122,18,.22); color: #ffb062; }
 .hist-origem { font-size: 12px; opacity: .7; }
 .vazio { opacity: .7; padding: 20px 0; }
+#hist-resumo { grid-template-columns: repeat(5, 1fr); }
